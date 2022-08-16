@@ -37,8 +37,7 @@ public class LinkedList<T> {
 
     public T get(int i) throws ListIndexOutOfBoundException {
         rangeCheck(i); // this throws an exception but we won't catch it here
-        // TODO: complete the rest of the method
-        // instead of null, you should return the item stored in the node
+       
 
         Node cursor = head;
         for (int j = 0; j < i; ++j) {
@@ -50,7 +49,7 @@ public class LinkedList<T> {
     }
 
     public int find(T item) {
-        // TODO: complete the find method
+       
         int i = 0;
         Node cursor = head;
         // for (i = -1; i < size; i++) {
@@ -68,24 +67,10 @@ public class LinkedList<T> {
     }
 
     public void insert(int i, T item) throws ListIndexOutOfBoundException {
-        // TODO: Complete the insert method
-        /*
-         * there are 3 cases:
-         * 1. list is empty (head is null)
-         * 2. inserting at the beginning of the list (i = 0)
-         * 3. inserting anywhere else
-         * 
-         * the new node will be inserted at the index and push the
-         * current node to right. e.g.
-         * [ac1][ac2][ac3]
-         * insert(1, ac1.5)
-         * [ac1][ac1.5][ac2][ac3]
-         * insert(3, ac2.5)
-         * [ac1][ac1.5][ac2][ac2.5][ac3]
-         */
+        
         Node node = new Node(item);
         if (head == null) { // first case
-            // head = new Node(item);
+            
             head = new Node(item);
             tail = head;
             this.size++;
@@ -111,11 +96,10 @@ public class LinkedList<T> {
     }
 
     public T delete(int i) throws ListIndexOutOfBoundException, EmptyListException {
-        // TODO: complete the delete method
-        // use this to store the item and return it in the end
+       
         T deletedItem = null;
         if (head == null) {
-            // deletedItem = null;
+           
             return deletedItem;
 
         } else if (i == 0) {
@@ -138,13 +122,7 @@ public class LinkedList<T> {
 
     }
 
-    /*
-     * similar to insert, consider 3 cases
-     * empty list, insert at the beginning, and anywhere else
-     * don't forget to decrement size
-     * 
-     * 💡 HINT: you can use cursor.next = cursor.next.next
-     */
+    
 
     // Utility methods
     public void rangeCheck(int i) throws ListIndexOutOfBoundException {
